@@ -10,6 +10,7 @@
             "includePath": [
                 "c:/Users/Isaac/Documents/PlatformIO/Projects/teensy-two-button/include",
                 "c:/Users/Isaac/Documents/PlatformIO/Projects/teensy-two-button/src",
+                "c:/Users/Isaac/Documents/PlatformIO/Projects/teensy-two-button/.pio/libdeps/teensylc/EasyButton/src",
                 "C:/Users/Isaac/.platformio/packages/framework-arduinoteensy/cores/teensy3",
                 "C:/Users/Isaac/.platformio/packages/framework-arduinoteensy/libraries/ADC",
                 "C:/Users/Isaac/.platformio/packages/framework-arduinoteensy/libraries/AccelStepper/src",
@@ -117,6 +118,7 @@
                 "path": [
                     "c:/Users/Isaac/Documents/PlatformIO/Projects/teensy-two-button/include",
                     "c:/Users/Isaac/Documents/PlatformIO/Projects/teensy-two-button/src",
+                    "c:/Users/Isaac/Documents/PlatformIO/Projects/teensy-two-button/.pio/libdeps/teensylc/EasyButton/src",
                     "C:/Users/Isaac/.platformio/packages/framework-arduinoteensy/cores/teensy3",
                     "C:/Users/Isaac/.platformio/packages/framework-arduinoteensy/libraries/ADC",
                     "C:/Users/Isaac/.platformio/packages/framework-arduinoteensy/libraries/AccelStepper/src",
