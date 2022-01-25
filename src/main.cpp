@@ -34,7 +34,7 @@ void setHeldNote(uint8_t index)
 
 void setup()
 {
-  for (int i = 0; i < 8; i++)
+  for (int i = 0; i < 2; i++)
   {
     buttons[i].begin();
   }
@@ -56,7 +56,7 @@ void loop()
 {
   usbMIDI.read();
 
-  for (int i = 0; i < 8; i++)
+  for (int i = 0; i < 2; i++)
   {
     buttons[i].read();
 
