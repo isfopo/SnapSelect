@@ -21,13 +21,13 @@ uint8_t heldNotes[8] = {
 
 bool noteIsHeld[2] = {false, false};
 
-void sendNote(uint8_t note)
+void sendCC(uint8_t note)
 {
-  usbMIDI.sendNoteOn(note, 127, MIDI_CHANNEL);
-  usbMIDI.sendNoteOff(note, 0, MIDI_CHANNEL);
+  usbMIDI.sendControlChange(note, 127, MIDI_CHANNEL);
+  usbMIDI.sendControlChange(note, 0, MIDI_CHANNEL);
 }
 
-void setHeldNote(uint8_t index)
+void setHeld(uint8_t index)
 {
   noteIsHeld[index] = true;
 }
@@ -40,16 +40,16 @@ void setup()
   }
 
   buttons[0].onPressed([]() -> void
-                       { sendNote(pressedNotes[0]); });
+                       { sendCC(pressedNotes[0]); });
 
   buttons[1].onPressed([]() -> void
-                       { sendNote(pressedNotes[1]); });
+                       { sendCC(pressedNotes[1]); });
 
   buttons[0].onPressedFor(HOLD_TIME, []() -> void
-                          { setHeldNote(0); });
+                          { setHeld(0); });
 
   buttons[1].onPressedFor(HOLD_TIME, []() -> void
-                          { setHeldNote(1); });
+                          { setHeld(1); });
 }
 
 void loop()
@@ -62,7 +62,7 @@ void loop()
 
     if (buttons[i].wasReleased() && noteIsHeld[i])
     {
-      sendNote(heldNotes[i]);
+      sendCC(heldNotes[i]);
       noteIsHeld[i] = false;
     }
   }
