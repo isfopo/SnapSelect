@@ -3,9 +3,9 @@ from __future__ import with_statement
 import Live
 from _Framework.ControlSurface import ControlSurface
 from _Framework.ButtonElement import ButtonElement
+from .DeviceSelectButton import DeviceSelectButton
 
 from .mappings import *
-from .consts import *
 from .enums import *
 
 
@@ -21,21 +21,13 @@ class MacroSelect(ControlSurface):
             self._live_minor_version = live.get_minor_version()
             self._live_bugfix_version = live.get_bugfix_version()
 
-            self._note_map = []
-            self._load_MIDI_map()
+            self.log_message("Loaded MacroSelect")
 
-            # write your init code here
+            self.device_select_button = DeviceSelectButton(
+                channel=CHANNEL, identifier=DEVICE_SELECT_BUTTON, log=self.log_message
+            )
 
     def disconnect(self):
         """clean up on disconnect"""
         ControlSurface.disconnect(self)
         return None
-
-    def _load_mappings(self):
-        momentary = True
-
-        for note in range(128):
-            button = ButtonElement(momentary, types.NOTE, CHANNEL, note)
-            button.name = "Note_" + str(note)
-            self._note_map.append(button)
-        self._note_map.append(None)
