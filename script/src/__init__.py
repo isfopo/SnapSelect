@@ -1,6 +1,6 @@
-from .MacroSelect import MacroSelect
+from .SnapSelect import SnapSelect
 
 
 def create_instance(c_instance):
     """Creates and returns Remote Script instance"""
-    return MacroSelect(c_instance)
+    return SnapSelect(c_instance)

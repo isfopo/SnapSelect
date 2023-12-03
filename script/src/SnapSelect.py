@@ -2,16 +2,15 @@ from __future__ import with_statement
 
 import Live
 from _Framework.ControlSurface import ControlSurface
-from _Framework.ButtonElement import ButtonElement
 from .DeviceSelectButton import DeviceSelectButton
 
 from .mappings import *
 from .enums import *
 
 
-class MacroSelect(ControlSurface):
+class SnapSelect(ControlSurface):
     __module__ = __name__
-    __doc__ = "MacroSelect"
+    __doc__ = "SnapSelect"
 
     def __init__(self, c_instance):
         ControlSurface.__init__(self, c_instance)

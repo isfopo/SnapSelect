@@ -1,5 +1,5 @@
 install:
-	python3 script/runners/install.py --name MacroSelect
+	python3 script/runners/install.py --name SnapSelect
 
 watch:
 	python3 script/runners/watch.py --version 'Live 11.3.13'
