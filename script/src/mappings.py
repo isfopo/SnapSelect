@@ -1,0 +1,1 @@
+CHANNEL = 0  # Starts on 0 (equals channel 1)

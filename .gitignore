@@ -37,3 +37,9 @@
 .vscode/c_cpp_properties.json
 .vscode/launch.json
 .vscode/ipch
+
+/script/_Framework
+/script/_Generic
+/script/Live
+
+.DS_Store
