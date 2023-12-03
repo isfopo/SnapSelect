@@ -3,6 +3,7 @@ from __future__ import with_statement
 import Live
 from _Framework.ControlSurface import ControlSurface
 from .DeviceSelectButton import DeviceSelectButton
+from .SnapSelectButton import SnapSelectButton
 
 from .mappings import *
 from .enums import *
@@ -24,6 +25,10 @@ class SnapSelect(ControlSurface):
 
             self.device_select_button = DeviceSelectButton(
                 channel=CHANNEL, identifier=DEVICE_SELECT_BUTTON, log=self.log_message
+            )
+
+            self.snap_select_button = SnapSelectButton(
+                channel=CHANNEL, identifier=SNAP_SELECT_BUTTON, log=self.log_message
             )
 
     def disconnect(self):
