@@ -8,11 +8,11 @@
         {
             "name": "PlatformIO",
             "includePath": [
-                "/Users/isaacpoole/Projects/Embedded/teensy-macro-select/include",
-                "/Users/isaacpoole/Projects/Embedded/teensy-macro-select/src",
-                "/Users/isaacpoole/Projects/Embedded/teensy-macro-select/.pio/libdeps/teensylc/EasyButton/src",
+                "/Users/isaacpoole/Projects/Embedded/teensy-snap-select/include",
+                "/Users/isaacpoole/Projects/Embedded/teensy-snap-select/src",
+                "/Users/isaacpoole/Projects/Embedded/teensy-snap-select/.pio/libdeps/teensylc/EasyButton/src",
                 "/Users/isaacpoole/.platformio/packages/framework-arduinoteensy/cores/teensy3",
-                "/Users/isaacpoole/Projects/Embedded/teensy-macro-select/.pio/libdeps/teensylc/MegunoLink/src",
+                "/Users/isaacpoole/Projects/Embedded/teensy-snap-select/.pio/libdeps/teensylc/MegunoLink/src",
                 "/Users/isaacpoole/.platformio/packages/framework-arduinoteensy/libraries/ADC",
                 "/Users/isaacpoole/.platformio/packages/framework-arduinoteensy/libraries/AccelStepper/src",
                 "/Users/isaacpoole/.platformio/packages/framework-arduinoteensy/libraries/Adafruit_NeoPixel",
@@ -117,11 +117,11 @@
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
-                    "/Users/isaacpoole/Projects/Embedded/teensy-macro-select/include",
-                    "/Users/isaacpoole/Projects/Embedded/teensy-macro-select/src",
-                    "/Users/isaacpoole/Projects/Embedded/teensy-macro-select/.pio/libdeps/teensylc/EasyButton/src",
+                    "/Users/isaacpoole/Projects/Embedded/teensy-snap-select/include",
+                    "/Users/isaacpoole/Projects/Embedded/teensy-snap-select/src",
+                    "/Users/isaacpoole/Projects/Embedded/teensy-snap-select/.pio/libdeps/teensylc/EasyButton/src",
                     "/Users/isaacpoole/.platformio/packages/framework-arduinoteensy/cores/teensy3",
-                    "/Users/isaacpoole/Projects/Embedded/teensy-macro-select/.pio/libdeps/teensylc/MegunoLink/src",
+                    "/Users/isaacpoole/Projects/Embedded/teensy-snap-select/.pio/libdeps/teensylc/MegunoLink/src",
                     "/Users/isaacpoole/.platformio/packages/framework-arduinoteensy/libraries/ADC",
                     "/Users/isaacpoole/.platformio/packages/framework-arduinoteensy/libraries/AccelStepper/src",
                     "/Users/isaacpoole/.platformio/packages/framework-arduinoteensy/libraries/Adafruit_NeoPixel",
