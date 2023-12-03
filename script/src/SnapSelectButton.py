@@ -12,4 +12,7 @@ class SnapSelectButton(Button):
         Button.__init__(self, channel, identifier, allow_passthrough=False, log=log)
 
     def button_value_listener(self, velocity: int):
-        self.log("snap button pressed")
+        if velocity > 0:
+            # get a list of snapshots for selected device
+            # cycle through snapshots in list on press
+            pass

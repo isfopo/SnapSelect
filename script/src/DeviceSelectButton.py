@@ -12,4 +12,7 @@ class DeviceSelectButton(Button):
         Button.__init__(self, channel, identifier, allow_passthrough=False, log=log)
 
     def button_value_listener(self, velocity: int):
-        self.log("button pressed")
+        if velocity > 0:
+            # get a list of all devices that have snapshots
+            # cycle through devices in list on press, selecting them - if none are selected, then start on first
+            pass
