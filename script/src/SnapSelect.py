@@ -22,10 +22,7 @@ class SnapSelect(ControlSurface):
             self._live_minor_version = live.get_minor_version()
             self._live_bugfix_version = live.get_bugfix_version()
 
-            for track in self.tracks():
-                self.log_message(track.name)
-
-            self.log_message("Loaded MacroSelect")
+            self.devices_with_snaps()
 
             self.device_select_button = DeviceSelectButton(
                 channel=CHANNEL, identifier=DEVICE_SELECT_BUTTON, log=self.log_message
@@ -40,6 +37,21 @@ class SnapSelect(ControlSurface):
 
     def tracks(self) -> List[Live.Track.Track]:
         return self.song().tracks
+
+    def devices_with_snaps(self) -> List[Live.Device.Device]:
+        devices_with_snaps = []
+
+        for track in self.tracks():
+            devices = track.devices
+
+            for device in devices:
+                if (
+                    isinstance(device, Live.RackDevice.RackDevice)
+                    and device.variation_count > 0
+                ):
+                    devices_with_snaps.append(device)
+
+        return devices_with_snaps
 
     def disconnect(self):
         """clean up on disconnect"""
