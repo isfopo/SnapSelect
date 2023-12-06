@@ -73,13 +73,16 @@ class SnapSelect(ControlSurface):
 
     def next_device(self) -> None:
         # if any device is the appointed device
+        devices = self.devices_with_snaps()
         try:
-            index = self.devices_with_snaps().index(self.get_appointed_device())
-            self.log_message(self.get_appointed_device())
-            self.log_message(index)
+            index = devices.index(self.get_appointed_device())
+            if index + 1 == len(devices):
+                self.set_device(devices[0])
+            else:
+                self.set_device(devices[index + 1])
 
         except ValueError:
-            self.set_device(self.devices_with_snaps()[0])
+            self.set_device(devices[0])
 
     def disconnect(self):
         """clean up on disconnect"""
