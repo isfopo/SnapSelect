@@ -33,7 +33,10 @@ class SnapSelect(ControlSurface):
             )
 
             self.snap_select_button = SnapSelectButton(
-                channel=CHANNEL, identifier=SNAP_SELECT_BUTTON, log=self.log_message
+                channel=CHANNEL,
+                identifier=SNAP_SELECT_BUTTON,
+                next_snap=self.next_snap,
+                log=self.log_message,
             )
 
     def song(self) -> Live.Song.Song:
@@ -79,6 +82,9 @@ class SnapSelect(ControlSurface):
 
         except ValueError:
             self.set_device(devices[0])
+
+    def next_snap(self):
+        pass
 
     def disconnect(self):
         """clean up on disconnect"""
