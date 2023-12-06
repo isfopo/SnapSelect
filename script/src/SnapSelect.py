@@ -81,7 +81,13 @@ class SnapSelect(ControlSurface):
             self.set_device(devices[0])
 
     def next_snap(self):
-        pass
+        device = self.get_appointed_device()
+        index = device.selected_variation_index
+        if index < 0 or index + 1 == device.variation_count:
+            device.selected_variation_index = 0
+        else:
+            device.selected_variation_index = index + 1
+        device.recall_selected_variation()
 
     def disconnect(self):
         """clean up on disconnect"""
