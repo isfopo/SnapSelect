@@ -17,7 +17,6 @@ class SnapSelect(ControlSurface):
     def __init__(self, c_instance):
         ControlSurface.__init__(self, c_instance)
         with self.component_guard():
-            self.log_message("Init")
             live = Live.Application.get_application()
             self._live_major_version = live.get_major_version()
             self._live_minor_version = live.get_minor_version()

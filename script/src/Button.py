@@ -15,9 +15,6 @@ class Button:
         self.identifier = identifier
         self.element = ButtonElement(True, MIDI_NOTE_TYPE, channel, identifier)
         self.log = log
-
-        self.log("button loaded")
-
         self.element.add_value_listener(self.button_value_listener)
 
         if allow_passthrough:
