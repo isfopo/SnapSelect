@@ -39,9 +39,6 @@ class SnapSelect(ControlSurface):
     def song(self) -> Live.Song.Song:
         return super().song()
 
-    def song_view(self) -> Live.Song.Song.View:
-        return self.song().view
-
     def tracks(self) -> List[Live.Track.Track]:
         return self.song().tracks
 
