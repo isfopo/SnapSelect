@@ -48,9 +48,6 @@ class SnapSelect(ControlSurface):
     def get_appointed_device(self) -> Live.Device.Device:
         return self.song().appointed_device
 
-    def set_appointed_device(self, device: Live.Device.Device) -> None:
-        self.song().appointed_device = device
-
     def devices_with_snaps(self) -> List[Live.Device.Device]:
         devices_with_snaps = []
 
