@@ -17,6 +17,7 @@ class SnapSelect(ControlSurface):
     def __init__(self, c_instance):
         ControlSurface.__init__(self, c_instance)
         with self.component_guard():
+            self.log_message("Init")
             live = Live.Application.get_application()
             self._live_major_version = live.get_major_version()
             self._live_minor_version = live.get_minor_version()
@@ -25,7 +26,10 @@ class SnapSelect(ControlSurface):
             self.devices_with_snaps()
 
             self.device_select_button = DeviceSelectButton(
-                channel=CHANNEL, identifier=DEVICE_SELECT_BUTTON, log=self.log_message
+                channel=CHANNEL,
+                identifier=DEVICE_SELECT_BUTTON,
+                next_device=self.next_device,
+                log=self.log_message,
             )
 
             self.snap_select_button = SnapSelectButton(
@@ -35,8 +39,17 @@ class SnapSelect(ControlSurface):
     def song(self) -> Live.Song.Song:
         return super().song()
 
+    def song_view(self) -> Live.Song.Song.View:
+        return self.song().view
+
     def tracks(self) -> List[Live.Track.Track]:
         return self.song().tracks
+
+    def get_appointed_device(self) -> Live.Device.Device:
+        return self.song().appointed_device
+
+    def set_appointed_device(self, device: Live.Device.Device) -> None:
+        self.song().appointed_device = device
 
     def devices_with_snaps(self) -> List[Live.Device.Device]:
         devices_with_snaps = []
@@ -52,6 +65,23 @@ class SnapSelect(ControlSurface):
                     devices_with_snaps.append(device)
 
         return devices_with_snaps
+
+    def set_device(self, device: Live.Device.Device) -> None:
+        song = self.song()
+        song.view.select_device(device)
+        song.view.selected_track = device.canonical_parent
+
+    def next_device(self) -> None:
+        # if any device is the appointed device
+        try:
+            self.set_device(self.devices_with_snaps()[0])
+            index = self.devices_with_snaps().index(self.get_appointed_device())
+
+        except ValueError:
+            self.log_message("error")
+
+        # set the appointed device to the next in device list
+        # else set to first in list
 
     def disconnect(self):
         """clean up on disconnect"""
