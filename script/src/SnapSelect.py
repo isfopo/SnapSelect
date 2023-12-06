@@ -74,14 +74,12 @@ class SnapSelect(ControlSurface):
     def next_device(self) -> None:
         # if any device is the appointed device
         try:
-            self.set_device(self.devices_with_snaps()[0])
             index = self.devices_with_snaps().index(self.get_appointed_device())
+            self.log_message(self.get_appointed_device())
+            self.log_message(index)
 
         except ValueError:
-            self.log_message("error")
-
-        # set the appointed device to the next in device list
-        # else set to first in list
+            self.set_device(self.devices_with_snaps()[0])
 
     def disconnect(self):
         """clean up on disconnect"""
