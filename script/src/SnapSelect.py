@@ -72,7 +72,6 @@ class SnapSelect(ControlSurface):
         song.view.selected_track = device.canonical_parent
 
     def next_device(self) -> None:
-        # if any device is the appointed device
         devices = self.devices_with_snaps()
         try:
             index = devices.index(self.get_appointed_device())
